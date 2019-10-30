@@ -35,10 +35,12 @@ class MainActivity : AppCompatActivity() {
 
                 Picasso.get().load(response.getString("img")).into(img)
             }, Response.ErrorListener { error -> Log.e("test", error.localizedMessage) })
+        println(request)
         queue.add(request)
     }
 
     companion object {
+//        const val URL = "https://my-json-server.typicode.com/bgdom/cours-android/games/3"
         const val URL = "https://my-json-server.typicode.com/bgdom/cours-android/games?fbclid=IwAR30rF0I5I7uXIWtWzbKlHq2iZjFqoi85hkIPK-FDmgOXfkrzOSrm1lEASk"
     }
 //    override fun onCreate(savedInstanceState: Bundle?) {
