@@ -1,4 +1,4 @@
-package com.example.projetkotlin
+package com.example.projetkotlin.game
 
 import android.content.Context
 import android.os.Bundle
@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
+import com.example.projetkotlin.R
 
 import com.example.projetkotlin.dummy.DummyContent
 import com.example.projetkotlin.dummy.DummyContent.DummyItem
@@ -48,7 +48,10 @@ class GameFragment : Fragment() {
                     columnCount <= 1 -> LinearLayoutManager(context)
                     else -> GridLayoutManager(context, columnCount)
                 }
-                adapter = MyGameRecyclerViewAdapter(DummyContent.ITEMS, listener)
+                adapter = MyGameRecyclerViewAdapter(
+                    DummyContent.ITEMS,
+                    listener
+                )
             }
         }
         return view

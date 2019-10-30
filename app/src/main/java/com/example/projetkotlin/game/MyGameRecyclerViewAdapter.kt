@@ -1,13 +1,14 @@
-package com.example.projetkotlin
+package com.example.projetkotlin.game
 
 import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import com.example.projetkotlin.R
 
 
-import com.example.projetkotlin.GameFragment.OnListFragmentInteractionListener
+import com.example.projetkotlin.game.GameFragment.OnListFragmentInteractionListener
 import com.example.projetkotlin.dummy.DummyContent.DummyItem
 
 import kotlinx.android.synthetic.main.fragment_game.view.*
