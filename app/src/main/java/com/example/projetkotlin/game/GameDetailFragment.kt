@@ -20,8 +20,8 @@ class GameDetailFragment(private val game: Game) : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         Picasso.get().load(this.game.img).into(img)
-        description.text = game.description;
-        name.text = game.name;
+        description.text = game.description
+        name.text = game.name
 
         super.onViewCreated(view, savedInstanceState)
     }
