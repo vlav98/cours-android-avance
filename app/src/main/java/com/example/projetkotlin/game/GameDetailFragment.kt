@@ -1,14 +1,15 @@
 package com.example.projetkotlin.game
 
-import android.content.Context
 import android.content.Intent
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
+import android.text.Layout.JUSTIFICATION_MODE_INTER_WORD
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
-import com.example.projetkotlin.HttpRequestActivity
 import com.example.projetkotlin.R
 import com.example.projetkotlin.WikiViewActivity
 import com.squareup.picasso.Picasso
@@ -23,9 +24,11 @@ class GameDetailFragment(private val game: Game) : Fragment() {
         return inflater.inflate(R.layout.fragment_game_detail, container, false)
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         Picasso.get().load(this.game.img).into(img)
         description.text = game.description
+        description.justificationMode = JUSTIFICATION_MODE_INTER_WORD
         name.text = game.name
 
         show.setOnClickListener {
