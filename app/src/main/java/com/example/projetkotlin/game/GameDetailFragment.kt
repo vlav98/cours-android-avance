@@ -28,6 +28,13 @@ class GameDetailFragment(private val game: Game) : Fragment() {
         description.text = game.description
         name.text = game.name
 
+        show.setOnClickListener {
+            val value: String = Uri.parse(game.link).toString()
+            val openWEBVIEW = Intent(this.context, WikiViewActivity::class.java)
+            openWEBVIEW.putExtra("url", value)
+            startActivity(openWEBVIEW)
+        }
+
         link.setOnClickListener {
             val openURL = Intent(Intent.ACTION_VIEW)
             openURL.data = Uri.parse(game.link)
